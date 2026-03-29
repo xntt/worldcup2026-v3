@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">加载中...</title>
+  <meta name="description" content="参与世界杯比分预测，赢取独家周边与全网最高博彩红利！">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo" id="site-name">加载中...</a>
+      <div class="nav-links">
+        <a href="index.html" class="active">赛程大厅</a>
+        <a href="predict.html" class="highlight">🔥 免费竞猜</a>
+        <a href="odds.html">博彩红利</a>
+        <a href="shop.html">周边商城</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 主体内容 -->
+  <main id="main-content">
+    <!-- 英雄横幅 -->
+    <section class="hero">
+      <h1 id="hero-title">加载中...</h1>
+      <p id="hero-desc">加载中...</p>
+      <a href="predict.html" class="btn btn-primary">立刻参与今日预测 ➔</a>
+    </section>
+
+    <!-- 焦点赛程 -->
+    <section>
+      <h2 class="section-title">📅 焦点赛程</h2>
+      <div class="grid" id="matches-grid">
+        <!-- 动态生成 -->
+      </div>
+    </section>
+  </main>
+
+  <!-- 底部 -->
+  <footer>
+    <p id="footer-name">© 加载中...</p>
+    <p class="disclaimer">免责声明：本站不直接提供博彩服务。通过本站链接注册可能使我们获得佣金。请理性参与。</p>
+  </footer>
+
+  <!-- 加载数据 -->
+  <script src="data.js"></script>
+  <script>
+    // 加载网站信息
+    document.getElementById('page-title').textContent = siteData.site.title;
+    document.getElementById('site-name').textContent = siteData.site.name;
+    document.getElementById('hero-title').innerHTML = siteData.site.description + '，<span>' + siteData.site.name + '</span>';
+    document.getElementById('footer-name').textContent = '© 2026 ' + siteData.site.name;
+
+    // 加载比赛卡片
+    const matchesGrid = document.getElementById('matches-grid');
+    siteData.matches.forEach(match => {
+      const card = document.createElement('div');
+      card.className = 'match-card';
+      card.innerHTML = `
+        <div class="match-meta">
+          <span>📍 ${match.stadium}</span>
+          <span class="status">${match.status} • ${match.time}</span>
+        </div>
+        <div class="match-teams">
+          <span>${match.teamA}</span>
+          <span class="match-score">${match.score}</span>
+          <span>${match.teamB}</span>
+        </div>
+        <div class="match-actions">
+          <a href="predict.html?match=${match.id}" class="btn-predict">参与预测</a>
+          <a href="odds.html" class="btn-odds">查看赔率</a>
+        </div>
+      `;
+      matchesGrid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

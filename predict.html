@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔥 免费竞猜 - 2026 狂热站</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo" id="site-name">加载中...</a>
+      <div class="nav-links">
+        <a href="index.html">赛程大厅</a>
+        <a href="predict.html" class="highlight">🔥 免费竞猜</a>
+        <a href="odds.html">博彩红利</a>
+        <a href="shop.html">周边商城</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" style="padding: 2rem;">
+      <h1>🔥 免费参与竞猜</h1>
+      <p style="color: var(--text-muted);">预测正确即有机会赢得官方周边！</p>
+    </div>
+
+    <form class="predict-form" id="predictForm">
+      <!-- 动态生成预测表单 -->
+    </form>
+
+    <div class="warning-box">
+      <p class="title">⚠️ 负责任博彩</p>
+      <p class="text">请确保您已满18岁，且博彩行为在您所在地区合法。</p>
+    </div>
+
+    <p style="text-align: center; color: var(--text-muted);">
+      🎁 正确预测全部比赛的用户，将有机会获得限量版球衣！
+    </p>
+  </main>
+
+  <footer>
+    <p id="footer-name">© 加载中...</p>
+    <p class="disclaimer">免责声明：请理性博彩，18岁以上方可参与。</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    document.getElementById('site-name').textContent = siteData.site.name;
+    document.getElementById('footer-name').textContent = '© 2026 ' + siteData.site.name;
+
+    const form = document.getElementById('predictForm');
+    
+    siteData.matches.forEach(match => {
+      const group = document.createElement('div');
+      group.className = 'form-group';
+      group.innerHTML = `
+        <h3>${match.time} - ${match.teamA} vs ${match.teamB}</h3>
+        <div class="predict-inputs">
+          <input type="number" min="0" max="15" placeholder="?" required id="score-${match.id}-a">
+          <span style="font-size: 1.5rem; font-weight: 700;">:</span>
+          <input type="number" min="0" max="15" placeholder="?" required id="score-${match.id}-b">
+        </div>
+      `;
+      form.appendChild(group);
+    });
+
+    // 邮箱输入
+    const emailGroup = document.createElement('div');
+    emailGroup.className = 'form-group';
+    emailGroup.innerHTML = `
+      <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">📧 填写邮箱接收结果通知</label>
+      <input type="email" class="email-input" placeholder="your@email.com" required id="email">
+    `;
+    form.appendChild(emailGroup);
+
+    // 提交按钮
+    const submitBtn = document.createElement('button');
+    submitBtn.type = 'submit';
+    submitBtn.className = 'submit-btn';
+    submitBtn.textContent = '提交预测 ➔';
+    form.appendChild(submitBtn);
+
+    // 提交处理
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const predictions = siteData.matches.map(m => ({
+        match: `${m.teamA} vs ${m.teamB}`,
+        score: `${document.getElementById(`score-${m.id}-a`).value} : ${document.getElementById(`score-${m.id}-b`).value}`
+      }));
+      const email = document.getElementById('email').value;
+      
+      // 显示成功
+      document.getElementById('main-content').innerHTML = `
+        <div class="success-box">
+          <div class="icon">🎉</div>
+          <h2>预测已提交！</h2>
+          <p>你的预测已保存。比赛结果出来后，我们会通过邮件通知你！</p>
+          <div style="background: var(--card-bg); border-radius: 12px; padding: 1.5rem; text-align: left; margin: 1.5rem 0;">
+            <h3 style="margin-bottom: 1rem;">你的预测：</h3>
+            ${predictions.map(p => `<div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--card-border);">
+              <span>${p.match}</span>
+              <span style="color: var(--accent);">${p.score}</span>
+            </div>`).join('')}
+          </div>
+          <p style="color: var(--text-muted);">邮箱: ${email}</p>
+          <a href="index.html" class="btn btn-primary" style="margin-top: 1rem;">返回首页</a>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
