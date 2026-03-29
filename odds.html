@@ -1,52 +1,50 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>💰 博彩红利专区 - 2026 狂热站</title>
+  <title>💰 Betting Bonuses - World Cup 2026 Hub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav>
-      <a href="index.html" class="logo" id="site-name">加载中...</a>
+      <a href="index.html" class="logo" id="site-name">Loading...</a>
       <div class="nav-links">
-        <a href="index.html">赛程大厅</a>
-        <a href="predict.html" class="highlight">🔥 免费竞猜</a>
-        <a href="odds.html" class="active">博彩红利</a>
-        <a href="shop.html">周边商城</a>
+        <a href="index.html">Schedule</a>
+        <a href="predict.html" class="highlight">🔥 Free Predictions</a>
+        <a href="odds.html" class="active">Betting Bonuses</a>
+        <a href="shop.html">Shop</a>
       </div>
     </nav>
   </header>
 
   <main>
     <div class="hero" style="padding: 2rem;">
-      <h1>💰 博彩红利专区</h1>
-      <p style="color: var(--text-muted);">通过我们的链接注册，获取全网最高的新户奖励！</p>
+      <h1>💰 Betting Bonuses</h1>
+      <p style="color: var(--text-muted);">Register through our links to get the best new user bonuses!</p>
     </div>
 
     <div class="warning-box">
-      <p class="title">⚠️ 负责任博彩警告</p>
-      <p class="text">请确保您已满18岁，且博彩行为在您所在地区合法。</p>
+      <p class="title">⚠️ Responsible Gambling Warning</p>
+      <p class="text">Please ensure you are 18+ and gambling is legal in your region.</p>
     </div>
 
-    <div class="grid" id="bookmakers-grid">
-      <!-- 动态生成 -->
-    </div>
+    <div class="grid" id="bookmakers-grid"></div>
 
     <div class="how-to" style="margin-top: 3rem;">
-      <h2>💡 如何使用</h2>
+      <h2>💡 How It Works</h2>
       <ol>
-        <li>点击上方任意平台的"立即注册"按钮</li>
-        <li>使用我们的链接完成新用户注册</li>
-        <li>完成首充，享受专属高额红利！</li>
+        <li>Click "Register Now" on any platform above</li>
+        <li>Complete new user registration using our link</li>
+        <li>Make your first deposit and enjoy exclusive bonuses!</li>
       </ol>
     </div>
   </main>
 
   <footer>
-    <p id="footer-name">© 加载中...</p>
-    <p class="disclaimer">免责声明：通过本站链接注册可能使我们获得佣金。请理性参与。</p>
+    <p id="footer-name">© Loading...</p>
+    <p class="disclaimer">Disclaimer: Using our affiliate links may earn us commission. Please gamble responsibly.</p>
   </footer>
 
   <script src="data.js"></script>
@@ -64,7 +62,7 @@
         <div class="bookmaker-rating">${b.rating}</div>
         <div class="bookmaker-bonus">${b.bonus}</div>
         <p class="bookmaker-desc">${b.description}</p>
-        <a href="${b.link}" target="_blank" rel="noopener noreferrer" class="bookmaker-link">🔗 立即注册</a>
+        <a href="${b.link}" target="_blank" rel="noopener noreferrer" class="bookmaker-link">🔗 Register Now</a>
       `;
       grid.appendChild(card);
     });

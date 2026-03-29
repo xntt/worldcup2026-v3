@@ -1,146 +1,146 @@
-// ===== 核心数据文件 =====
-// 你只需要修改这里的内容，网页会自动更新！
-// 格式：严格按照JSON格式，最后一项不能有逗号
+// ===== Core Data File =====
+// Just edit this file to update your website!
+// Format: JSON, last item cannot have comma
 
 const siteData = {
-  // 网站信息
+  // Site Info
   site: {
-    name: "⚽ 2026 狂热站",
-    description: "北美狂欢，一触即发",
-    title: "2026美加墨世界杯 - 球迷终极预测与福利中心"
+    name: "⚽ World Cup 2026 Hub",
+    description: "North America Ready to Rock",
+    title: "2026 FIFA World Cup - Ultimate Fan Hub"
   },
 
-  // 赛程数据（首页和竞猜页用）
+  // Match Schedule (for home and predict pages)
   matches: [
     {
       id: 1,
-      teamA: "美国 🇺🇸",
-      teamB: "墨西哥 🇲🇽",
-      time: "明天 20:00",
-      stadium: "洛杉矶 SoFi 体育场",
-      status: "即将开赛",
+      teamA: "USA 🇺🇸",
+      teamB: "Mexico 🇲🇽",
+      time: "Tomorrow 20:00",
+      stadium: "SoFi Stadium, LA",
+      status: "Upcoming",
       score: "- : -"
     },
     {
       id: 2,
-      teamA: "阿根廷 🇦🇷",
-      teamB: "加拿大 🇨🇦",
-      time: "6月15日 18:00",
-      stadium: "多伦多 BMO 球场",
-      status: "未开始",
+      teamA: "Argentina 🇦🇷",
+      teamB: "Canada 🇨🇦",
+      time: "June 15, 18:00",
+      stadium: "BMO Field, Toronto",
+      status: "Not Started",
       score: "- : -"
     },
     {
       id: 3,
-      teamA: "巴西 🇧🇷",
-      teamB: "哥伦比亚 🇨🇴",
-      time: "6月12日 20:00",
-      stadium: "帕萨迪纳玫瑰碗",
-      status: "未开始",
+      teamA: "Brazil 🇧🇷",
+      teamB: "Colombia 🇨🇴",
+      time: "June 12, 20:00",
+      stadium: "Rose Bowl, Pasadena",
+      status: "Not Started",
       score: "- : -"
     },
     {
       id: 4,
-      teamA: "德国 🇩🇪",
-      teamB: "西班牙 🇪🇸",
-      time: "6月13日 18:00",
-      stadium: "达拉斯 AT&T 体育场",
-      status: "未开始",
+      teamA: "Germany 🇩🇪",
+      teamB: "Spain 🇪🇸",
+      time: "June 13, 18:00",
+      stadium: "AT&T Stadium, Dallas",
+      status: "Not Started",
       score: "- : -"
     },
     {
       id: 5,
-      teamA: "法国 🇫🇷",
-      teamB: "英格兰 🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      time: "6月13日 21:00",
-      stadium: "旧金山 Levi'S 体育场",
-      status: "未开始",
+      teamA: "France 🇫🇷",
+      teamB: "England 🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      time: "June 13, 21:00",
+      stadium: "Levi's Stadium, SF",
+      status: "Not Started",
       score: "- : -"
     }
   ],
 
-  // 博彩平台分销链接（博彩红利页用）
-  // 【重要】把 link 改成你的真实分销链接
+  // Bookmaker Affiliate Links (for odds page)
+  // 【IMPORTANT】Replace 'link' with your real affiliate links!
   bookmakers: [
     {
       name: "Stake",
       logo: "🎰",
       rating: "⭐⭐⭐⭐⭐",
-      bonus: "$500 新户奖金",
+      bonus: "$500 New User Bonus",
       link: "https://Stake.com?ref=yourcode",
-      description: "Crypto博彩首选"
+      description: "Crypto betting首选"
     },
     {
       name: "BC.Game",
       logo: "🎲",
       rating: "⭐⭐⭐⭐⭐",
-      bonus: "$1000 首次存款奖励",
+      bonus: "$1000 First Deposit",
       link: "https://BC.Game?ref=yourcode",
-      description: "最佳赔率"
+      description: "Best odds"
     },
     {
       name: "Roobet",
       logo: "🦊",
       rating: "⭐⭐⭐⭐",
-      bonus: "$75 免费旋转",
+      bonus: "$75 Free Spins",
       link: "https://Roobet.com?ref=yourcode",
-      description: "快速提款"
+      description: "Fast withdrawals"
     },
     {
       name: "NordVPN",
       logo: "🔐",
       rating: "⭐⭐⭐⭐⭐",
-      bonus: "68% 折扣",
+      bonus: "68% Off",
       link: "https://NordVPN.com?ref=yourcode",
-      description: "安全浏览"
+      description: "Secure browsing"
     },
     {
       name: "Surfshark",
       logo: "🦈",
       rating: "⭐⭐⭐⭐",
-      bonus: "82% 折扣",
+      bonus: "82% Off",
       link: "https://Surfshark.com?ref=yourcode",
-      description: "无限设备"
+      description: "Unlimited devices"
     },
     {
       name: "ExpressVPN",
       logo: "🚀",
       rating: "⭐⭐⭐⭐⭐",
-      bonus: "49% 折扣",
+      bonus: "49% Off",
       link: "https://ExpressVPN.com?ref=yourcode",
-      description: "极速VPN"
+      description: "Lightning fast"
     }
   ],
 
-  // 周边商品（商城页用）
+  // Products (for shop page)
   products: [
     {
       id: 1,
-      name: "2026世界杯官方T恤",
+      name: "2026 World Cup Official T-Shirt",
       price: "$29.99",
       image: "👕",
-      description: "限量版官方球衣"
+      description: "Limited edition official jersey"
     },
     {
       id: 2,
-      name: "球迷围巾",
+      name: "Fan Scarf",
       price: "$19.99",
       image: "🧣",
-      description: "支持你喜欢的球队"
+      description: "Support your team"
     },
     {
       id: 3,
-      name: "世界杯帽子",
+      name: "World Cup Cap",
       price: "$24.99",
       image: "🧢",
-      description: "经典赛事纪念款"
+      description: "Classic commemorative"
     },
     {
       id: 4,
-      name: "纪念徽章套装",
+      name: "Badge Set",
       price: "$14.99",
       image: "🏆",
-      description: "收藏佳品"
+      description: "Collector's item"
     }
   ]
 };

@@ -1,44 +1,42 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>👕 周边商城 - 2026 狂热站</title>
+  <title>👕 Official Shop - World Cup 2026 Hub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav>
-      <a href="index.html" class="logo" id="site-name">加载中...</a>
+      <a href="index.html" class="logo" id="site-name">Loading...</a>
       <div class="nav-links">
-        <a href="index.html">赛程大厅</a>
-        <a href="predict.html" class="highlight">🔥 免费竞猜</a>
-        <a href="odds.html">博彩红利</a>
-        <a href="shop.html" class="active">周边商城</a>
+        <a href="index.html">Schedule</a>
+        <a href="predict.html" class="highlight">🔥 Free Predictions</a>
+        <a href="odds.html">Betting Bonuses</a>
+        <a href="shop.html" class="active">Shop</a>
       </div>
     </nav>
   </header>
 
   <main>
     <div class="hero" style="padding: 2rem;">
-      <h1>👕 官方周边商城</h1>
-      <p style="color: var(--text-muted);">穿上official装备，支持你的球队！</p>
+      <h1>👕 Official Shop</h1>
+      <p style="color: var(--text-muted);">Get official gear and support your team!</p>
     </div>
 
-    <div class="grid" id="products-grid">
-      <!-- 动态生成 -->
-    </div>
+    <div class="grid" id="products-grid"></div>
 
     <div class="vip-banner" style="margin-top: 3rem;">
-      <h2>🎁 VIP会员专享</h2>
-      <p>加入VIP会员，享受全场8折优惠，还有专属限定商品！</p>
-      <a href="predict.html" class="btn btn-primary">立即加入VIP ➔</a>
+      <h2>🎁 VIP Member Exclusive</h2>
+      <p>Join VIP for 20% off all items plus exclusive limited products!</p>
+      <a href="predict.html" class="btn btn-primary">Join VIP Now ➔</a>
     </div>
   </main>
 
   <footer>
-    <p id="footer-name">© 加载中...</p>
-    <p class="disclaimer">支持正版周边，收藏从速！</p>
+    <p id="footer-name">© Loading...</p>
+    <p class="disclaimer">Official merchandise. Limited stock!</p>
   </footer>
 
   <script src="data.js"></script>
@@ -55,8 +53,8 @@
         <div class="product-name">${p.name}</div>
         <p class="product-desc">${p.description}</p>
         <div class="product-price">${p.price}</div>
-        <a href="#" class="product-btn" onclick="alert('暂未开放购买，敬请期待！'); return false;">加入购物车</a>
-      </div>;
+        <a href="#" class="product-btn" onclick="alert('Coming soon! Stay tuned.'); return false;">Add to Cart</a>
+      </div>`;
       grid.appendChild(card);
     });
   </script>

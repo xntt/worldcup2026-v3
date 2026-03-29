@@ -1,47 +1,45 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🔥 免费竞猜 - 2026 狂热站</title>
+  <title>🔥 Free Predictions - World Cup 2026 Hub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav>
-      <a href="index.html" class="logo" id="site-name">加载中...</a>
+      <a href="index.html" class="logo" id="site-name">Loading...</a>
       <div class="nav-links">
-        <a href="index.html">赛程大厅</a>
-        <a href="predict.html" class="highlight">🔥 免费竞猜</a>
-        <a href="odds.html">博彩红利</a>
-        <a href="shop.html">周边商城</a>
+        <a href="index.html">Schedule</a>
+        <a href="predict.html" class="highlight">🔥 Free Predictions</a>
+        <a href="odds.html">Betting Bonuses</a>
+        <a href="shop.html">Shop</a>
       </div>
     </nav>
   </header>
 
   <main>
     <div class="hero" style="padding: 2rem;">
-      <h1>🔥 免费参与竞猜</h1>
-      <p style="color: var(--text-muted);">预测正确即有机会赢得官方周边！</p>
+      <h1>🔥 Free Predictions</h1>
+      <p style="color: var(--text-muted);">Predict correctly to win official merch!</p>
     </div>
 
-    <form class="predict-form" id="predictForm">
-      <!-- 动态生成预测表单 -->
-    </form>
+    <form class="predict-form" id="predictForm"></form>
 
     <div class="warning-box">
-      <p class="title">⚠️ 负责任博彩</p>
-      <p class="text">请确保您已满18岁，且博彩行为在您所在地区合法。</p>
+      <p class="title">⚠️ Responsible Gambling</p>
+      <p class="text">Please ensure you are 18+ and gambling is legal in your region.</p>
     </div>
 
     <p style="text-align: center; color: var(--text-muted);">
-      🎁 正确预测全部比赛的用户，将有机会获得限量版球衣！
+      🎁 Predict all matches correctly and win a limited edition jersey!
     </p>
   </main>
 
   <footer>
-    <p id="footer-name">© 加载中...</p>
-    <p class="disclaimer">免责声明：请理性博彩，18岁以上方可参与。</p>
+    <p id="footer-name">© Loading...</p>
+    <p class="disclaimer">Disclaimer: Please gamble responsibly. 18+ only.</p>
   </footer>
 
   <script src="data.js"></script>
@@ -65,23 +63,20 @@
       form.appendChild(group);
     });
 
-    // 邮箱输入
     const emailGroup = document.createElement('div');
     emailGroup.className = 'form-group';
     emailGroup.innerHTML = `
-      <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">📧 填写邮箱接收结果通知</label>
+      <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">📧 Email for results notification</label>
       <input type="email" class="email-input" placeholder="your@email.com" required id="email">
     `;
     form.appendChild(emailGroup);
 
-    // 提交按钮
     const submitBtn = document.createElement('button');
     submitBtn.type = 'submit';
     submitBtn.className = 'submit-btn';
-    submitBtn.textContent = '提交预测 ➔';
+    submitBtn.textContent = 'Submit Predictions ➔';
     form.appendChild(submitBtn);
 
-    // 提交处理
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const predictions = siteData.matches.map(m => ({
@@ -90,21 +85,20 @@
       }));
       const email = document.getElementById('email').value;
       
-      // 显示成功
       document.getElementById('main-content').innerHTML = `
         <div class="success-box">
           <div class="icon">🎉</div>
-          <h2>预测已提交！</h2>
-          <p>你的预测已保存。比赛结果出来后，我们会通过邮件通知你！</p>
+          <h2>Predictions Submitted!</h2>
+          <p>Your predictions have been saved. We'll email you when results are out!</p>
           <div style="background: var(--card-bg); border-radius: 12px; padding: 1.5rem; text-align: left; margin: 1.5rem 0;">
-            <h3 style="margin-bottom: 1rem;">你的预测：</h3>
+            <h3 style="margin-bottom: 1rem;">Your Predictions:</h3>
             ${predictions.map(p => `<div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--card-border);">
               <span>${p.match}</span>
               <span style="color: var(--accent);">${p.score}</span>
             </div>`).join('')}
           </div>
-          <p style="color: var(--text-muted);">邮箱: ${email}</p>
-          <a href="index.html" class="btn btn-primary" style="margin-top: 1rem;">返回首页</a>
+          <p style="color: var(--text-muted);">Email: ${email}</p>
+          <a href="index.html" class="btn btn-primary" style="margin-top: 1rem;">Back to Home</a>
         </div>
       `;
     });
